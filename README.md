@@ -1,11 +1,11 @@
 # README
 
-T## usersテーブル
+### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false, unique: true, add_index|
+|name|string|null: false, unique: true, add_index|
 ### Association
 - has_many :groups
 - has_many :messages
@@ -14,7 +14,7 @@ T## usersテーブル
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text|
 |image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
@@ -25,9 +25,8 @@ T## usersテーブル
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|text|null: false|
+|name|string|null: false|
 ### Association
-- belongs_to :user
 - has_many :messages
 - has_many :group_users
 - has_many  :users,  through:  :groups_users
