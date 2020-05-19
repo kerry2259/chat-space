@@ -1,0 +1,43 @@
+.main-chat
+  .main-chat__header
+    .main-chat__header__left
+      .main-chat__header__left--current-group
+        test
+      .main-chat__header__left__member
+        Member:
+        .main-chat__header__left__member--list
+          tech
+    .main-chat__header__btn
+      = link_to "#", class: "main-chat__header__btn--link" do
+        Edit
+  .main-chat__message
+    .main-chat__message__info
+      .main-chat__message__info__name
+        tech
+        .main-chat__message__info__name--date
+          2020/05/19(Tue) time
+      .main-chat__message__info--text
+        aaaaaaaaaaaa
+    .main-chat__message__info
+      .main-chat__message__info__name
+        tech
+        .main-chat__message__info__name--date
+          2020/05/19(Tue) time
+      .main-chat__message__info--text
+        aaaaaaaaaaaa
+    .main-chat__message__info
+      .main-chat__message__info__name
+        tech
+        .main-chat__message__info__name--date
+          2020/05/19(Tue) time
+      .main-chat__message__info--text
+        aaaaaaaaaaaa
+  .main-chat__footer
+    .main-chat__footer__form
+      %input{type: "text", class: "main-chat__footer__form__text", placeholder: "type a message"}
+      %label{class: "main-chat__footer__form__image"}
+        = icon('fas', 'image')
+        %input{type: "file", class: "main-chat__footer__form__image--file"}
+    .main-chat__footer__btn
+      -# %input{type: "submit", class: "main-chat__footer__btn--link"}
+      Send
