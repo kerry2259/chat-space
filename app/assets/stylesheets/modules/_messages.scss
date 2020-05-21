@@ -43,8 +43,12 @@
     background-color: #2f3e51;
     height: 100vh;
     padding-top: 100px;
+    overflow: scroll;
     &__list {
       padding: 20px 20px 40px;
+      &--link {
+        text-decoration: none;
+      }
       &__name {
         font-size: 15px;
         color: #ffffff;
@@ -108,6 +112,7 @@
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 35px 0 0 40px;
+    overflow: scroll;
     &__info {
       padding-bottom: 46px;
       &__name {
@@ -121,47 +126,53 @@
           margin-left: 10px;
         }
       }
-      &--text {
+      &__text {
         color: #434a54;
         font-size: 14px;
       }
     }
   }
-  &__footer {
+  &__form {
     background-color: #d2d2d2;
+    position: fixed;
     height: 90px;
     padding: 20px 40px;
-    display: flex;
-    &__form {
-      background-color: #ffffff;
-      position: relative;
-      width: 100%;
-      margin-right: 15px;
-      &__text {
-        padding: 0 10px;
-        height: 50px;
-        width: 100%;
-        border-style: none;
-      }
-      &__image {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        &--file {
-          display: none;
-        }
-      }
-    }
-    &__btn {
-      background-color: #38aef0;
-      line-height: 50px;
-      padding: 0 30px;
+    width: calc(100% - 300px);
+    .new_message {
+      display: flex;
+       width:100%;
+   
+      .main-chat__form__message {
+      padding: 0 10px;
       height: 50px;
-      width: 100px;
-      color: #fafafa;
-      cursor: pointer;
-      font-weight: bold;
+      width: 100%;
+      border-style: none;
+      }
+      .main-chat__form__message__mask {
+        background-color: #ffffff;
+        position: relative;
+        margin-right: 15px;
+        &__image {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          &--file {
+            display: none;
+          }
+        }       
+      }
+    
+      .main-chat__form__submit {
+        background-color: #38aef0;
+        line-height: 50px;
+        padding: 0 30px;
+        height: 50px;
+        width: 100px;
+        color: #fafafa;
+        cursor: pointer;
+        font-weight: bold;
+        }
     }
   }
 }
