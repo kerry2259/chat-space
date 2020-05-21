@@ -2,42 +2,24 @@
   .main-chat__header
     .main-chat__header__left
       .main-chat__header__left--current-group
-        test
+        = @group.name
       .main-chat__header__left__member
         Member:
         .main-chat__header__left__member--list
-          tech
+          - @group.users.each do |user|
+            = user.name
     .main-chat__header__btn
-      = link_to "#", class: "main-chat__header__btn--link" do
+      = link_to edit_group_path(params[:group_id]), class: "main-chat__header__btn--link" do
         Edit
+
   .main-chat__message
-    .main-chat__message__info
-      .main-chat__message__info__name
-        tech
-        .main-chat__message__info__name--date
-          2020/05/19(Tue) time
-      .main-chat__message__info--text
-        aaaaaaaaaaaa
-    .main-chat__message__info
-      .main-chat__message__info__name
-        tech
-        .main-chat__message__info__name--date
-          2020/05/19(Tue) time
-      .main-chat__message__info--text
-        aaaaaaaaaaaa
-    .main-chat__message__info
-      .main-chat__message__info__name
-        tech
-        .main-chat__message__info__name--date
-          2020/05/19(Tue) time
-      .main-chat__message__info--text
-        aaaaaaaaaaaa
-  .main-chat__footer
-    .main-chat__footer__form
-      %input{type: "text", class: "main-chat__footer__form__text", placeholder: "type a message"}
-      %label{class: "main-chat__footer__form__image"}
-        = icon('fas', 'image')
-        %input{type: "file", class: "main-chat__footer__form__image--file"}
-    .main-chat__footer__btn
-      -# %input{type: "submit", class: "main-chat__footer__btn--link"}
-      Send
+    = render @messages
+
+  .main-chat__form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: "main-chat__form__message", placeholder: "type a message"
+      .main-chat__form__message__mask
+        = f.label :image, class: "main-chat__form__message__mask__image" do
+          = icon('fas', 'image')
+          = f.file_field :image, class: "main-chat__form__message__mask__image--file"
+      = f.submit 'Send', class: 'main-chat__form__submit'
