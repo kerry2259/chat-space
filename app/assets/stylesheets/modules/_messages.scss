@@ -42,8 +42,8 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     overflow: scroll;
+    padding: 20px 20px 0;
     &__list {
-      padding: 20px 20px 40px;
       &--link {
         text-decoration: none;
       }
@@ -59,6 +59,7 @@
         color: #ffffff;
         font-weight: bold;
         line-height: 15px;
+        padding-bottom: 40px;
       }
     }
   }
